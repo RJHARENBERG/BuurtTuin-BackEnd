@@ -1,14 +1,14 @@
 HELP.md
-#Deelopdracht2.md
+Deelopdracht2.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
 ### aangegeven door docenten ###
-#/node_modules
-#/.parcel_cache
-#/.idea
+/node_modules
+/.parcel_cache
+/.idea
 
 ### STS ###
 .apt_generated
