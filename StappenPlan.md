@@ -1,13 +1,13 @@
 
 Stappen plan:
 mappen:
-    [] Het project bevat, op de juiste plaats in de map-structuur, een map genaamd Controllers;
-    [] Het project bevat, op de juiste plaats in de map-structuur, een map genaamd Exceptions;
-    [] Het project bevat, op de juiste plaats in de map-structuur, een map genaamd Models;
-    [] Het project bevat, op de juiste plaats in de map-structuur, een map genaamd Repositorys;
-    [] Het project bevat, op de juiste plaats in de map-structuur, een map genaamd Services;
-    [] Het project bevat een ExceptionController;
-    [] Het project bevat een RecordNotFoundException;
+    [v] Het project bevat, op de juiste plaats in de map-structuur, een map genaamd Controllers;
+    [v] Het project bevat, op de juiste plaats in de map-structuur, een map genaamd Exceptions;
+    [v] Het project bevat, op de juiste plaats in de map-structuur, een map genaamd Models;
+    [v] Het project bevat, op de juiste plaats in de map-structuur, een map genaamd Repositorys;
+    [v] Het project bevat, op de juiste plaats in de map-structuur, een map genaamd Services;
+    [v] Het project bevat een ExceptionController;
+    [v] Het project bevat een RecordNotFoundException;
     [] Het project bevat een data.sql voor de voor in gevulde data;
 
 De ExceptionController bevat:
