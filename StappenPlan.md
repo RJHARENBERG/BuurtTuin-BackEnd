@@ -35,10 +35,10 @@ Het project bevat de volgende dependencies:
     [v] Spring Data Jpa
     [v] PostgreSQL Driver
     [v] De Application.properties bevat de properties uit hoofdstuk 9.2 van de cursus Spring Boot(met aangepaste namen)
-    [] De "Naam van de klasse"+Repository extends JpaRepository met de juiste parameters
-    [] Voeg de benodigde dependencies toe aan je POM.xml en laat Maven deze instaleren
-    [] Voeg aan de application.properties de benodigde properties toe
-    [] Maak een nieuwe database aan in PgAdmin (zorg dat de naam overeenkomt met de properties in je_application.properties)
+    [v] De "Naam van de klasse"+Repository extends JpaRepository met de juiste parameters
+    [v] Voeg de benodigde dependencies toe aan je POM.xml en laat Maven deze instaleren
+    [v] Voeg aan de application.properties de benodigde properties toe
+    [v] Maak een nieuwe database aan in PgAdmin (zorg dat de naam overeenkomt met de properties in je_application.properties)
 
 Atributten in Models: 
     [] velden aan maken
@@ -90,7 +90,7 @@ Relaties:
     [] zie klassen dieagram voor relaties LET OP de Code en de klasse dieagram moeten met el kaar over een komen!!! 
 
 post man:
-    [] maak in poost man een map ge naamt TestEindpointsBuurtTuin
+    [v] maak in poost man een map ge naamt TestEindpointsBuurtTuin
     [] maak hier in voor alle entpoints een test reqwest
     [] maak een export aan om deze data toe te voegen aan de zip met documentatie 
     [] TestEindpointsBuurtTuin -> ... -> export

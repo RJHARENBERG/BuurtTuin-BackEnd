@@ -2,7 +2,7 @@ package com.example.buurttuin.Services;
 
 import com.example.buurttuin.Dtos.TestDto;
 import com.example.buurttuin.Dtos.TestInputDto;
-import com.example.buurttuin.Models.Test;
+import com.example.buurttuin.Fields.Test;
 import com.example.buurttuin.Repositorys.TestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
