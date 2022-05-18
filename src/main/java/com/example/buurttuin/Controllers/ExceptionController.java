@@ -1,4 +1,4 @@
-package com.example.buurttuin.ExceptionController;
+package com.example.buurttuin.Controllers;
 
 import com.example.buurttuin.Exceptions.RecordNotFoundException;
 import org.springframework.http.HttpStatus;
