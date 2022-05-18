@@ -11,12 +11,12 @@ mappen:
     [] Het project bevat een data.sql voor de voor in gevulde data;
 
 De ExceptionController bevat:
-    [] een exceptionhandler
+    [v] een exceptionhandler
 
 De RecordNotFoundException bevat:
-    [] een default exception
-    [] een exception met message
-    [] Extent de klasse met de RunTimeException.
+    [v] een default exception
+    [v] een exception met message
+    [v] Extent de klasse met de RunTimeException.
     [] Vul de klasse aan aan de hand van het voorbeeld in hoofdstuk 5.11 van de cursus Spring Boot.
 
 Controler:
@@ -31,9 +31,9 @@ klasse:
     [] maak in de klasse een exceptionHandler met de juiste notatie en response entitiy.
 
 Het project bevat de volgende dependencies:
-    [] Spring Web
-    [] Spring Data Jpa
-    [] PostgreSQL Driver
+    [v] Spring Web
+    [v] Spring Data Jpa
+    [v] PostgreSQL Driver
     [] De Application.properties bevat de properties uit hoofdstuk 9.2 van de cursus Spring Boot(met aangepaste namen)
     [] De "Naam van de klasse"+Repository extends JpaRepository met de juiste parameters
     [] Voeg de benodigde dependencies toe aan je POM.xml en laat Maven deze instaleren
