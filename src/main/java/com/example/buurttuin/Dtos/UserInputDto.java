@@ -1,16 +1,10 @@
-package com.example.buurttuin.Fields;
+package com.example.buurttuin.Dtos;
 
-import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import com.example.buurttuin.Fields.Borrower;
+import com.example.buurttuin.Fields.Lender;
 
-@Entity
-@Table(name = "users")
-public class User {
+public class UserInputDto {
 
-    @Id
-    @GeneratedValue
-    @Column(name = "id")
     private Long id;
 
     private String userName;
@@ -23,15 +17,16 @@ public class User {
     private Long houseNumber;
     private String email;
 
-//    private Set<GardenMember> gardenMembers = new HashSet<>();
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "lender_id", referencedColumnName = "id")
     private Lender lender;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "borrower_id", referencedColumnName = "id")
     private Borrower borrower;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getUserName() {
         return userName;
@@ -97,11 +92,19 @@ public class User {
         this.email = email;
     }
 
-    public Long getId() {
-        return id;
+    public Lender getLender() {
+        return lender;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setLender(Lender lender) {
+        this.lender = lender;
+    }
+
+    public Borrower getBorrower() {
+        return borrower;
+    }
+
+    public void setBorrower(Borrower borrower) {
+        this.borrower = borrower;
     }
 }
