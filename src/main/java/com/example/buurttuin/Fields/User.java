@@ -1,5 +1,7 @@
 package com.example.buurttuin.Fields;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -25,6 +27,7 @@ public class User {
 
 //    private Set<GardenMember> gardenMembers = new HashSet<>();
 
+    @JsonIgnore
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "lender_id", referencedColumnName = "id")
     private Lender lender;
@@ -32,6 +35,22 @@ public class User {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "borrower_id", referencedColumnName = "id")
     private Borrower borrower;
+
+    public Lender getLender() {
+        return lender;
+    }
+
+    public void setLender(Lender lender) {
+        this.lender = lender;
+    }
+
+    public Borrower getBorrower() {
+        return borrower;
+    }
+
+    public void setBorrower(Borrower borrower) {
+        this.borrower = borrower;
+    }
 
     public String getUserName() {
         return userName;

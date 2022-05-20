@@ -1,5 +1,7 @@
 package com.example.buurttuin.Fields;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -18,6 +20,14 @@ public class Lender {
 
     @OneToMany(mappedBy = "lender")
     private Set<Reservation> reservations = new HashSet<>();
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public Set<Reservation> getReservations() {
         return reservations;
