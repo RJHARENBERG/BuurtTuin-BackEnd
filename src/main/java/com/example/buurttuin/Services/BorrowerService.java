@@ -6,12 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class BrorrowerService {
+public class BorrowerService {
 
     private final BorrowerRepository borrowerRepository;
 
     @Autowired
-    public BrorrowerService(BorrowerRepository borrowerRepository) {
+    public BorrowerService(BorrowerRepository borrowerRepository) {
         this.borrowerRepository = borrowerRepository;
     }
 }
+

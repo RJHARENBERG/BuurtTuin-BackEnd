@@ -100,6 +100,7 @@ data.sql:
     [] voeg in deze map start data om de aplicatie te kunnen starten
 
 Securetie:
+    [] probeer met een json webtoken JWT auterication te werken 
 
 unittests:
     [] Tevens voert de student unittests uit die gebruikmaken van de drie A’s,

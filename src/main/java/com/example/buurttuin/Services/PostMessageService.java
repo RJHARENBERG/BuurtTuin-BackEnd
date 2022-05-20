@@ -5,12 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PostMassageService {
+public class PostMessageService {
 
    private final PostMessagesRepository postMessagesRepository;
 
    @Autowired
-    public PostMassageService(PostMessagesRepository postMessagesRepository) {
+    public PostMessageService(PostMessagesRepository postMessagesRepository) {
         this.postMessagesRepository = postMessagesRepository;
     }
 }
+
