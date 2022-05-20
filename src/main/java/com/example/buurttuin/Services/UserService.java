@@ -57,6 +57,9 @@ public class UserService {
         dto.setHouseNumber(user.getHouseNumber());
         dto.setEmail(user.getEmail());
 
+        dto.setLender(user.getLender());
+        dto.setBorrower(user.getBorrower());
+
         return dto;
     }
 
@@ -72,6 +75,9 @@ public class UserService {
         user.setStreetName(userInputDto.getStreetName());
         user.setHouseNumber(userInputDto.getHouseNumber());
         user.setEmail(userInputDto.getEmail());
+
+        user.setLender(userInputDto.getLender());
+        user.setBorrower(user.getBorrower());
 
         return user;
     }

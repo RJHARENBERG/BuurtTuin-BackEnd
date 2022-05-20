@@ -1,20 +1,25 @@
-package com.example.buurttuin.Fields;
+package com.example.buurttuin.Dtos;
 
-import javax.persistence.*;
+import com.example.buurttuin.Fields.Reservation;
+import com.example.buurttuin.Fields.User;
+
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
-public class Borrower {
-    @Id
-    @GeneratedValue
+public class BorrowerInputDto {
+
+
     private Long id;
-
-    @OneToOne
     private User user;
-
-    @OneToMany(mappedBy = "borrower")
     private Set<Reservation> reservations = new HashSet<>();
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public User getUser() {
         return user;
@@ -30,13 +35,5 @@ public class Borrower {
 
     public void setReservations(Set<Reservation> reservations) {
         this.reservations = reservations;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 }

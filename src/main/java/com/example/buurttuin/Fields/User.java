@@ -32,6 +32,7 @@ public class User {
     @JoinColumn(name = "lender_id", referencedColumnName = "id")
     private Lender lender;
 
+    @JsonIgnore
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "borrower_id", referencedColumnName = "id")
     private Borrower borrower;

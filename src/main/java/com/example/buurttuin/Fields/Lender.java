@@ -12,6 +12,7 @@ public class Lender {
     @GeneratedValue
     private Long id;
 
+    @JsonIgnore
     @OneToOne
     private User user;
 
