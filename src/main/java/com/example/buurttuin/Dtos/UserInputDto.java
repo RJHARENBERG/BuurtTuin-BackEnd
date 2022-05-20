@@ -20,6 +20,7 @@ public class UserInputDto {
     private Lender lender;
     private Borrower borrower;
 
+
     public Long getId() {
         return id;
     }

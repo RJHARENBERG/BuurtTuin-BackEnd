@@ -1,8 +1,6 @@
 package com.example.buurttuin.Services;
 
 import com.example.buurttuin.Dtos.*;
-import com.example.buurttuin.Fields.Admin;
-import com.example.buurttuin.Fields.Test;
 import com.example.buurttuin.Fields.User;
 import com.example.buurttuin.Repositorys.BorrowerRepository;
 import com.example.buurttuin.Repositorys.LenderRepository;
@@ -17,16 +15,10 @@ import java.util.List;
 public class UserService {
 
     private final UserRepository userRepository;
-    private final LenderRepository lenderRepository;
-    private final BorrowerRepository borrowerRepository;
 
     @Autowired
-    public UserService(UserRepository userRepository,
-                       LenderRepository lenderRepository,
-                       BorrowerRepository borrowerRepository) {
+    public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
-        this.lenderRepository = lenderRepository;
-        this.borrowerRepository = borrowerRepository;
     }
 
     public UserDto addTest(UserInputDto userInputDto) {

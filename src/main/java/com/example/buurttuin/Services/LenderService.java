@@ -1,12 +1,9 @@
 package com.example.buurttuin.Services;
 
-import com.example.buurttuin.Dtos.*;
 import com.example.buurttuin.Dtos.LenderDto;
 import com.example.buurttuin.Dtos.LenderInputDto;
 import com.example.buurttuin.Exceptions.RecordNotFoundException;
 import com.example.buurttuin.Fields.Lender;
-import com.example.buurttuin.Fields.Lender;
-import com.example.buurttuin.Fields.Test;
 import com.example.buurttuin.Fields.User;
 import com.example.buurttuin.Repositorys.LenderRepository;
 import com.example.buurttuin.Repositorys.UserRepository;
@@ -45,7 +42,6 @@ public class LenderService {
             lender = optionalLender.get();
             User user = optionalUser.get();
 
-//            user.setLender(lender);
             lender.setUser(user);
             lenderRepository.save(lender);
         }
@@ -56,6 +52,7 @@ public class LenderService {
         var dto = new LenderDto();
 
         dto.setId(lender.getId());
+
         dto.setUser(lender.getUser());
         dto.setReservations(lender.getReservations());
         dto.setTools(lender.getTools());
@@ -66,6 +63,7 @@ public class LenderService {
         var lender = new Lender();
 
         lender.setId(lenderInputDto.getId());
+
         lender.setUser(lenderInputDto.getUser());
         lender.setReservations(lenderInputDto.getReservations());
         lender.setTools(lenderInputDto.getTools());
