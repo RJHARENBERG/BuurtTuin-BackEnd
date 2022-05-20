@@ -2,8 +2,6 @@ package com.example.buurttuin.Controllers;
 
 import com.example.buurttuin.Dtos.LenderDto;
 import com.example.buurttuin.Dtos.LenderInputDto;
-import com.example.buurttuin.Dtos.TestDto;
-import com.example.buurttuin.Dtos.TestInputDto;
 import com.example.buurttuin.Exceptions.RecordNotFoundException;
 import com.example.buurttuin.Services.LenderService;
 import com.example.buurttuin.Services.UserService;

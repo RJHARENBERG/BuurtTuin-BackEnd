@@ -1,7 +1,5 @@
 package com.example.buurttuin.Controllers;
 
-import com.example.buurttuin.Dtos.TestDto;
-import com.example.buurttuin.Dtos.TestInputDto;
 import com.example.buurttuin.Dtos.UserDto;
 import com.example.buurttuin.Dtos.UserInputDto;
 import com.example.buurttuin.Services.UserService;

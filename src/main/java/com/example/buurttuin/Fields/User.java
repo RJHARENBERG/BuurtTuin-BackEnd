@@ -35,6 +35,19 @@ public class User {
     @JoinColumn(name = "borrower_id", referencedColumnName = "id")
     private Borrower borrower;
 
+    @JsonIgnore
+    @OneToOne
+    @JoinColumn(name = "gardenMember_id", referencedColumnName = "id")
+    private GardenMember gardenMember;
+
+    public GardenMember getGardenMember() {
+        return gardenMember;
+    }
+
+    public void setGardenMember(GardenMember gardenMember) {
+        this.gardenMember = gardenMember;
+    }
+
     public Lender getLender() {
         return lender;
     }

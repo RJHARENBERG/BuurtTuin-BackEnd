@@ -2,8 +2,6 @@ package com.example.buurttuin.Services;
 
 import com.example.buurttuin.Dtos.*;
 import com.example.buurttuin.Fields.User;
-import com.example.buurttuin.Repositorys.BorrowerRepository;
-import com.example.buurttuin.Repositorys.LenderRepository;
 import com.example.buurttuin.Repositorys.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -51,6 +49,7 @@ public class UserService {
 
         dto.setLender(user.getLender());
         dto.setBorrower(user.getBorrower());
+        dto.setGardenMember(user.getGardenMember());
 
         return dto;
     }
@@ -69,7 +68,8 @@ public class UserService {
         user.setEmail(userInputDto.getEmail());
 
         user.setLender(userInputDto.getLender());
-        user.setBorrower(user.getBorrower());
+        user.setBorrower(userInputDto.getBorrower());
+        user.setGardenMember(userInputDto.getGardenMember());
 
         return user;
     }

@@ -7,13 +7,14 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Table(name = "borrower")
 public class Borrower {
     @Id
     @GeneratedValue
     private Long id;
 
     @JsonIgnore
-    @OneToOne
+    @OneToOne(mappedBy = "borrower")
     private User user;
 
     @OneToMany(mappedBy = "borrower")

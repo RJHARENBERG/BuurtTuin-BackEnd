@@ -1,6 +1,7 @@
 package com.example.buurttuin.Dtos;
 
 import com.example.buurttuin.Fields.Borrower;
+import com.example.buurttuin.Fields.GardenMember;
 import com.example.buurttuin.Fields.Lender;
 
 public class UserDto {
@@ -19,7 +20,15 @@ public class UserDto {
 
     private Lender lender;
     private Borrower borrower;
+    private GardenMember gardenMember;
 
+    public GardenMember getGardenMember() {
+        return gardenMember;
+    }
+
+    public void setGardenMember(GardenMember gardenMember) {
+        this.gardenMember = gardenMember;
+    }
 
     public Long getId() {
         return id;
