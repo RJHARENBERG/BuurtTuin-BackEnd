@@ -34,4 +34,13 @@ public class UserController {
                                         @PathVariable Long user_id){
         return userService.addNewBorrowerToUser(borrower_id, user_id);
     }
+
+    @PutMapping("/addNewLender/{lender_id}/ToUser/{user_id}")
+    public UserDto addNewLenderToUser(@PathVariable Long lender_id,
+                                      @PathVariable Long user_id){
+        return userService.addNewLenderToUser(lender_id, user_id);
+    }
+
+
+
 }

@@ -21,9 +21,17 @@ public class UserInputDto {
     private Long houseNumber;
     private String email;
 
-    private Lender lender;
+    private Set<Lender> lenders = new HashSet<>();
     private Set<Borrower> borrowers = new HashSet<>();
     private GardenMember gardenMember;
+
+    public Set<Lender> getLenders() {
+        return lenders;
+    }
+
+    public void setLenders(Set<Lender> lenders) {
+        this.lenders = lenders;
+    }
 
     public GardenMember getGardenMember() {
         return gardenMember;
@@ -103,14 +111,6 @@ public class UserInputDto {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Lender getLender() {
-        return lender;
-    }
-
-    public void setLender(Lender lender) {
-        this.lender = lender;
     }
 
     public Set<Borrower> getBorrowers() {

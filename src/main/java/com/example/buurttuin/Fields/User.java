@@ -26,6 +26,17 @@ public class User {
     @OneToMany
     private Set<Borrower> borrowers = new HashSet<>();
 
+    @OneToMany
+    private Set<Lender> lenders = new HashSet<>();
+
+    public Set<Lender> getLenders() {
+        return lenders;
+    }
+
+    public void setLenders(Set<Lender> lenders) {
+        this.lenders = lenders;
+    }
+
     public Set<Borrower> getBorrowers() {
         return borrowers;
     }
