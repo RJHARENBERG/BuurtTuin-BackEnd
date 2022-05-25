@@ -95,6 +95,13 @@ post man:
     [] maak een export aan om deze data toe te voegen aan de zip met documentatie 
     [] TestEindpointsBuurtTuin -> ... -> export
 
+
+dubbel/vervuiling van data:
+    [] zoorg er voor dat de data niet vervuilt wordt met dubele profiellen
+    [] chec bij het aan maken van een profiel of de gebruiker al bestaat
+    [] verkom dubbel gereedschap chek bij het aan maken van gereedschap of de gebruiker die al heeft
+    [] verkom dubbele afspraken chek bij het uit lenen of de afspraak al niet gemaakt is
+
 data.sql:
     [] maak een bestand in de map resources met de naam data.sql 
     [] voeg in deze map start data om de aplicatie te kunnen starten

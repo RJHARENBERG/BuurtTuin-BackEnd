@@ -1,7 +1,9 @@
 package com.example.buurttuin.Services;
 
 import com.example.buurttuin.Dtos.*;
+import com.example.buurttuin.Fields.Borrower;
 import com.example.buurttuin.Fields.User;
+import com.example.buurttuin.Repositorys.BorrowerRepository;
 import com.example.buurttuin.Repositorys.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,17 +11,20 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Service
 public class UserService {
 
     private final UserRepository userRepository;
+    private final BorrowerRepository borrowerRepository;
 
     @Autowired
-    public UserService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository, BorrowerRepository borrowerRepository) {
         this.userRepository = userRepository;
+        this.borrowerRepository = borrowerRepository;
     }
 
-    public UserDto addTest(UserInputDto userInputDto) {
+    public UserDto addUser(UserInputDto userInputDto) {
         User user = toUser(userInputDto);
         userRepository.save(user);
         return fromUser(user);
@@ -34,6 +39,19 @@ public class UserService {
         return userDtos;
     }
 
+
+    public UserDto addNewBorrowerToUser(Long borrowerId, Long userId){
+        Borrower borrower = borrowerRepository.getById(borrowerId);
+        User user = userRepository.getById(userId);
+
+        borrower.assignUser(user);
+        userRepository.save(user);
+        return fromUser(user);
+
+    }
+
+
+
     public static UserDto fromUser (User user){
         var dto = new UserDto();
 
@@ -47,9 +65,7 @@ public class UserService {
         dto.setHouseNumber(user.getHouseNumber());
         dto.setEmail(user.getEmail());
 
-        dto.setLender(user.getLender());
-        dto.setBorrower(user.getBorrower());
-        dto.setGardenMember(user.getGardenMember());
+        dto.setBorrower(user.getBorrowers());
 
         return dto;
     }
@@ -67,9 +83,7 @@ public class UserService {
         user.setHouseNumber(userInputDto.getHouseNumber());
         user.setEmail(userInputDto.getEmail());
 
-        user.setLender(userInputDto.getLender());
-        user.setBorrower(userInputDto.getBorrower());
-        user.setGardenMember(userInputDto.getGardenMember());
+        user.setBorrowers(userInputDto.getBorrowers());
 
         return user;
     }

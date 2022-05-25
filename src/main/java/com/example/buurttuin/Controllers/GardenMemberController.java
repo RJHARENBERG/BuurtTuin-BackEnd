@@ -20,12 +20,4 @@ public class GardenMemberController {
     public GardenMemberDto addTest (@RequestBody GardenMemberInputDto  gardenMemberInputDto){
         return gardenMemberService.addGardenMember( gardenMemberInputDto);
     }
-
-    @PutMapping("gardenMember/{gardenMember_id}/user/{user_id}")
-    public GardenMemberDto assignGardenMemberToUser(@PathVariable Long gardenMember_id,
-                                        @PathVariable Long user_id) throws RecordNotFoundException {
-        return gardenMemberService.assignGardenMemberToUser(gardenMember_id, user_id);
-    }
-
-
 }

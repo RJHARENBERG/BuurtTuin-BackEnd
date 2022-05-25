@@ -1,24 +1,17 @@
 package com.example.buurttuin.Fields;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
-@Table(name = "borrower")
+@Table(name = "BORROWER")
 public class Borrower {
     @Id
     @GeneratedValue
     private Long id;
 
-    @JsonIgnore
-    @OneToOne(mappedBy = "borrower")
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
-
-    @OneToMany(mappedBy = "borrower")
-    private Set<Reservation> reservations = new HashSet<>();
 
     public User getUser() {
         return user;
@@ -28,19 +21,15 @@ public class Borrower {
         this.user = user;
     }
 
-    public Set<Reservation> getReservations() {
-        return reservations;
-    }
-
-    public void setReservations(Set<Reservation> reservations) {
-        this.reservations = reservations;
-    }
-
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public void assignUser(User user) {
+        this.user = user;
     }
 }

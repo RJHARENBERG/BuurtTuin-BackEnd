@@ -4,6 +4,9 @@ import com.example.buurttuin.Fields.Borrower;
 import com.example.buurttuin.Fields.GardenMember;
 import com.example.buurttuin.Fields.Lender;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class UserDto {
 
     private Long id;
@@ -19,7 +22,7 @@ public class UserDto {
     private String email;
 
     private Lender lender;
-    private Borrower borrower;
+    private Set<Borrower> borrowers = new HashSet<>();
     private GardenMember gardenMember;
 
     public GardenMember getGardenMember() {
@@ -110,11 +113,15 @@ public class UserDto {
         this.lender = lender;
     }
 
-    public Borrower getBorrower() {
-        return borrower;
+    public Set<Borrower> getBorrowers() {
+        return borrowers;
     }
 
-    public void setBorrower(Borrower borrower) {
-        this.borrower = borrower;
+    public void setBorrowers(Set<Borrower> borrowers) {
+        this.borrowers = borrowers;
+    }
+
+    public void setBorrower(Set<Borrower> borrowers) {
+        this.borrowers = borrowers;
     }
 }

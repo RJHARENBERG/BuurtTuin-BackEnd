@@ -1,11 +1,11 @@
 package com.example.buurttuin.Fields;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Table(name = "users")
+@Table(name = "USERS")
 public class User {
 
     @Id
@@ -23,45 +23,23 @@ public class User {
     private Long houseNumber;
     private String email;
 
-//    private Set<GardenMember> gardenMembers = new HashSet<>();
+    @OneToMany
+    private Set<Borrower> borrowers = new HashSet<>();
 
-    @JsonIgnore
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "lender_id", referencedColumnName = "id")
-    private Lender lender;
-
-    @JsonIgnore
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "borrower_id", referencedColumnName = "id")
-    private Borrower borrower;
-
-    @JsonIgnore
-    @OneToOne
-    @JoinColumn(name = "gardenMember_id", referencedColumnName = "id")
-    private GardenMember gardenMember;
-
-    public GardenMember getGardenMember() {
-        return gardenMember;
+    public Set<Borrower> getBorrowers() {
+        return borrowers;
     }
 
-    public void setGardenMember(GardenMember gardenMember) {
-        this.gardenMember = gardenMember;
+    public void setBorrowers(Set<Borrower> borrowers) {
+        this.borrowers = borrowers;
     }
 
-    public Lender getLender() {
-        return lender;
+    public Long getId() {
+        return id;
     }
 
-    public void setLender(Lender lender) {
-        this.lender = lender;
-    }
-
-    public Borrower getBorrower() {
-        return borrower;
-    }
-
-    public void setBorrower(Borrower borrower) {
-        this.borrower = borrower;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUserName() {
@@ -126,13 +104,5 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 }
