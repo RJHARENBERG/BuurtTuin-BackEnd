@@ -1,11 +1,8 @@
 package com.example.buurttuin.Services;
 
 import com.example.buurttuin.Dtos.*;
-import com.example.buurttuin.Exceptions.RecordNotFoundException;
 import com.example.buurttuin.Fields.GardenMember;
-import com.example.buurttuin.Fields.User;
 import com.example.buurttuin.Repositorys.GardenMemberRepository;
-import com.example.buurttuin.Repositorys.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

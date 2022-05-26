@@ -1,8 +1,6 @@
 package com.example.buurttuin.Fields;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 public class Reservation {
@@ -12,17 +10,30 @@ public class Reservation {
 
     private String date;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @ManyToOne
-    @JoinColumn(name = "lender_id")
-    private Lender lender;
+    @JoinColumn(name = "tool_id")
+    private Tool tool;
 
-    @ManyToOne
-    @JoinColumn(name = "borrower_id")
-    private Borrower borrower;
+    public Tool getTool() {
+        return tool;
+    }
 
-    @OneToMany(mappedBy = "reservation")
-    private Set<Tool> tools = new HashSet<>();
+    public void setTool(Tool tool) {
+        this.tool = tool;
+    }
+
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public String getDate() {
         return date;
@@ -30,30 +41,6 @@ public class Reservation {
 
     public void setDate(String date) {
         this.date = date;
-    }
-
-    public Set<Tool> getTools() {
-        return tools;
-    }
-
-    public void setTools(Set<Tool> tools) {
-        this.tools = tools;
-    }
-
-    public Borrower getBorrower() {
-        return borrower;
-    }
-
-    public void setBorrower(Borrower borrower) {
-        this.borrower = borrower;
-    }
-
-    public Lender getLender() {
-        return lender;
-    }
-
-    public void setLender(Lender lender) {
-        this.lender = lender;
     }
 
     public Long getId() {

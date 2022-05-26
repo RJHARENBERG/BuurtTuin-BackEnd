@@ -1,17 +1,12 @@
-package com.example.buurttuin.Fields;
+package com.example.buurttuin.Dtos;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import javax.persistence.*;
+import com.example.buurttuin.Fields.Reservation;
+import com.example.buurttuin.Fields.User;
 
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
-public class Tool {
-
-    @Id
-    @GeneratedValue
+public class ToolInputDto {
     private Long id;
 
     private String toolName;
@@ -19,17 +14,16 @@ public class Tool {
     //    private toolImg;
     private String description;
 
-    @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "user_id", nullable = false)
     private User user;
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "tool",
-            fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL)
     private Set<Reservation> reservations = new HashSet<>();
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public Set<Reservation> getReservations() {
         return reservations;
@@ -39,16 +33,12 @@ public class Tool {
         this.reservations = reservations;
     }
 
-    public void assignUser(User user){
-        this.user = user;
+    public Long getId() {
+        return id;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getToolName() {
@@ -73,14 +63,6 @@ public class Tool {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
 }

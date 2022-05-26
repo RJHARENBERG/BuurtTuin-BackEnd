@@ -1,8 +1,6 @@
 package com.example.buurttuin.Dtos;
 
-import com.example.buurttuin.Fields.Borrower;
-import com.example.buurttuin.Fields.GardenMember;
-import com.example.buurttuin.Fields.Lender;
+import com.example.buurttuin.Fields.Tool;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -21,24 +19,16 @@ public class UserInputDto {
     private Long houseNumber;
     private String email;
 
-    private Set<Lender> lenders = new HashSet<>();
-    private Set<Borrower> borrowers = new HashSet<>();
-    private GardenMember gardenMember;
+    private Set<Tool> tools = new HashSet<>();
 
-    public Set<Lender> getLenders() {
-        return lenders;
+
+
+    public Set<Tool> getTools() {
+        return tools;
     }
 
-    public void setLenders(Set<Lender> lenders) {
-        this.lenders = lenders;
-    }
-
-    public GardenMember getGardenMember() {
-        return gardenMember;
-    }
-
-    public void setGardenMember(GardenMember gardenMember) {
-        this.gardenMember = gardenMember;
+    public void setTools(Set<Tool> tools) {
+        this.tools = tools;
     }
 
     public Long getId() {
@@ -113,11 +103,4 @@ public class UserInputDto {
         this.email = email;
     }
 
-    public Set<Borrower> getBorrowers() {
-        return borrowers;
-    }
-
-    public void setBorrowers(Set<Borrower> borrowers) {
-        this.borrowers = borrowers;
-    }
 }

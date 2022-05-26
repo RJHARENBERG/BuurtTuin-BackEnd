@@ -1,5 +1,7 @@
 package com.example.buurttuin.Fields;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -23,26 +25,33 @@ public class User {
     private Long houseNumber;
     private String email;
 
-    @OneToMany
-    private Set<Borrower> borrowers = new HashSet<>();
 
-    @OneToMany
-    private Set<Lender> lenders = new HashSet<>();
+    @JsonIgnore
+    @OneToMany(mappedBy = "user",
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
+    private Set<Tool> tools = new HashSet<>();
 
-    public Set<Lender> getLenders() {
-        return lenders;
+    @JsonIgnore
+    @OneToMany(mappedBy = "user",
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
+    private Set<Reservation> reservations = new HashSet<>();
+
+    public Set<Tool> getTools() {
+        return tools;
     }
 
-    public void setLenders(Set<Lender> lenders) {
-        this.lenders = lenders;
+    public void setTools(Set<Tool> tools) {
+        this.tools = tools;
     }
 
-    public Set<Borrower> getBorrowers() {
-        return borrowers;
+    public Set<Reservation> getReservations() {
+        return reservations;
     }
 
-    public void setBorrowers(Set<Borrower> borrowers) {
-        this.borrowers = borrowers;
+    public void setReservations(Set<Reservation> reservations) {
+        this.reservations = reservations;
     }
 
     public Long getId() {

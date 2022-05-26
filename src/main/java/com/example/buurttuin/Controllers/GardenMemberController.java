@@ -1,7 +1,6 @@
 package com.example.buurttuin.Controllers;
 
 import com.example.buurttuin.Dtos.*;
-import com.example.buurttuin.Exceptions.RecordNotFoundException;
 import com.example.buurttuin.Services.GardenMemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
